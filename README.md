@@ -25,40 +25,41 @@ A V E R is a web application built with Flask that performs emotion recognition 
 
 ### Steps to Set Up
 
-1. Clone the repository:
+1.Clone the repository:
 
     ```Terminal
     git clone https://github.com/Ram-ambati/A-V-E-R.git
     cd A-V-E-R
     ```
-2. Create the virtual environment
-```Terminal
-python -m venv venv
-```
+2.Create the virtual environment
+   
+    ```Terminal
+    python -m venv venv
+    ```
+3.Activate the virtual environment
+  On Windows activate your env
 
-# 2. Activate the virtual environment
-# On Windows
-```Terminal
-.\venv\Scripts\activate
-```
-2. Install the required dependencies:
+    ```Terminal
+    .\venv\Scripts\activate
+    ```
+4.Install the required dependencies:
 
     ```Terminal
     pip install -r requirements.txt
     ```
 
-3. Run the setup.py  once
-   ```Terminal
+5.Run the `setup.py`  (once) to create folders and set paths to models 
+
+    ```Terminal
     python setup.py
     ```
-
-4. Run the Flask application:
+6.Run the Flask application:
 
     ```Terminal
     python app.py
     ```
 
-    The app will be accessible at `http://127.0.0.1:5000/`.
+The app will be accessible at `http://127.0.0.1:5000/`.
 
 
 ## Folder Structure
