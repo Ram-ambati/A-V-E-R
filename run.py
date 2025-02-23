@@ -1,14 +1,12 @@
+from setup import *
 import os
-import sys
-import json
 import cv2
+import json
 import moviepy.editor as mp
 import contextlib
 import io
 import source.audio_analysis_utils.predict as audio_predict
 import source.face_emotion_utils.predict as face_predict
-import source.config as config
-from setup import create_folders, RESULTS_FOLDER  # Import setup functions
 
 # ------------------------- AUDIO ANALYSIS ------------------------- #
 def extract_audio(video_file):
@@ -16,11 +14,15 @@ def extract_audio(video_file):
     try:
         video = mp.VideoFileClip(video_file)
 
+        # ✅ Check if video has an audio track
         if video.audio is None:
             print(" No audio stream found in the video.")
             return None
 
-        audio_file = os.path.join(config.INPUT_FOLDER_PATH, os.path.splitext(os.path.basename(video_file))[0] + ".wav")
+        audio_file = os.path.join(
+            config.INPUT_FOLDER_PATH,
+            os.path.splitext(os.path.basename(video_file))[0] + ".wav"
+        )
 
         with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
             video.audio.write_audiofile(audio_file)
@@ -31,6 +33,7 @@ def extract_audio(video_file):
     except Exception as e:
         print(f"❌ Error extracting audio: {repr(e)}")
         return None
+
 
 
 def handle_audio_analysis(audio_file):
@@ -128,6 +131,7 @@ def handle_combined_analysis(video_file):
     frame_count = 0
 
     while True:
+        # Skip 10 frames to reduce processing load
         for _ in range(10):
             ret, _ = video.read()
             if not ret:
@@ -160,17 +164,16 @@ def handle_combined_analysis(video_file):
     print(f" Analysis saved: {result_path}")
     print("COMBINED ANALYSIS COMPLETED")
 
-
 # ------------------------- MAIN FUNCTION ------------------------- #
 
 def print_usage():
     """Display usage instructions."""
     print("\n Usage:")
-    print("  python run_analysis.py -VA <video.mp4>   # Video Analysis")
-    print("  python run_analysis.py -AA <audio.mp3>   # Audio Analysis")
-    print("  python run_analysis.py -IA <image.png>   # Image Analysis")
-    print("  python run_analysis.py -CA <video.mp4>   # Combined Analysis")
-    print("  python run_analysis.py <file_name>       # Auto-detect and process file\n")
+    print("  python run.py -VA <video.mp4>   # Video Analysis")
+    print("  python run.py -AA <audio.mp3>   # Audio Analysis")
+    print("  python run.py -IA <image.png>   # Image Analysis")
+    print("  python run.py -CA <video.mp4>   # Combined Analysis")
+    print("  python run.py <file_name>       # Auto-detect and process file\n")
 
 
 def main(file_name):
@@ -196,8 +199,6 @@ if __name__ == "__main__":
         print_usage()
         sys.exit(1)
 
-    create_folders()
-
     if len(sys.argv) == 3:
         mode, file_name = sys.argv[1], sys.argv[2]
         full_file_path = resolve_file_path(file_name)
@@ -209,17 +210,3 @@ if __name__ == "__main__":
         if mode == "-VA":
             handle_face_analysis(full_file_path)
         elif mode == "-AA":
-            handle_audio_analysis(full_file_path)
-        elif mode == "-IA":
-            handle_image_analysis(full_file_path)
-        elif mode == "-CA":
-            handle_combined_analysis(full_file_path)
-        else:
-            print("❌ Invalid command or file type.")
-            print_usage()
-
-    elif len(sys.argv) == 2:
-        main(sys.argv[1])
-    else:
-        print("\n❌ Invalid command format.")
-        print_usage()
