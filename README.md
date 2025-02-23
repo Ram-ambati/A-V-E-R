@@ -27,43 +27,44 @@ A V E R is a web application built with Flask that performs emotion recognition 
 
 1. Clone the repository:
 
-    ```bash
+    ```Terminal
     git clone https://github.com/Ram-ambati/A-V-E-R.git
     cd A-V-E-R
     ```
 2. Create the virtual environment
-```bash
+`Terminal
 python -m venv venv
-```
+`
 
 # 2. Activate the virtual environment
 # On Windows
-```bash
+`Terminal
 .\venv\Scripts\activate
-```
+`
 2. Install the required dependencies:
 
-    ```bash
+    `Terminal
     pip install -r requirements.txt
-    ```
+    `
 
 3. Run the setup.py  once
-   ```bash
+   `Terminal
     python setup.py
-    ```
+    `
 
 4. Run the Flask application:
 
-    ```bash
+    `Terminal
     python app.py
-    ```
+    `
 
     The app will be accessible at `http://127.0.0.1:5000/`.
 
 
 ## Folder Structure
 
-The directory structure of the project is as follows so make sure you dowmloaded evrything
+The directory structure of the project is as follows, so make sure you downloaded everything:
+```
 ├── .git/
 ├── __pycache__/
 ├── AnalysisResults/
@@ -80,6 +81,7 @@ The directory structure of the project is as follows so make sure you dowmloaded
 ├── requirements.txt
 ├── run.py
 └── setup.py
+```
 
 
 
@@ -95,13 +97,3 @@ The directory structure of the project is as follows so make sure you dowmloaded
 - **POST /upload**: Uploads files (image, audio, video) for analysis.
 - **GET /analysis/{file_name}**: Retrieves the analysis results in JSON format for the specified file.
 
-## Configuration
-
-The configuration file `config.py` contains all the necessary file paths and settings:
-
-```python
-# Example configuration values
-INPUT_FOLDER_PATH = "/path/to/input/files"
-OUTPUT_FOLDER_PATH = "/path/to/output/files"
-MODEL_FOLDER_PATH = "/path/to/models"
-```
