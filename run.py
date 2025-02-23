@@ -5,6 +5,7 @@ import json
 import moviepy.editor as mp
 import contextlib
 import io
+import sys
 import source.audio_analysis_utils.predict as audio_predict
 import source.face_emotion_utils.predict as face_predict
 
@@ -175,7 +176,6 @@ def print_usage():
     print("  python run.py -CA <video.mp4>   # Combined Analysis")
     print("  python run.py <file_name>       # Auto-detect and process file\n")
 
-
 def main(file_name):
     """Auto-detect file type and perform analysis."""
     full_file_path = resolve_file_path(file_name)
@@ -207,6 +207,20 @@ if __name__ == "__main__":
             print(f"❌ Error: File '{file_name}' not found.")
             sys.exit(1)
 
+        # Handle based on the mode
         if mode == "-VA":
             handle_face_analysis(full_file_path)
         elif mode == "-AA":
+            handle_audio_analysis(full_file_path)
+        elif mode == "-CA":
+            handle_combined_analysis(full_file_path)
+        elif mode == "-IA":
+            handle_image_analysis(full_file_path)  # Added for image analysis
+        else:
+            print("❌ Unsupported mode.")
+            print_usage()
+            sys.exit(1)
+    else:
+        # Auto-detect the file type when no mode is provided
+        file_name = sys.argv[1]
+        main(file_name)
