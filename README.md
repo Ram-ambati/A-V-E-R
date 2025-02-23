@@ -32,31 +32,31 @@ A V E R is a web application built with Flask that performs emotion recognition 
     cd A-V-E-R
     ```
 2. Create the virtual environment
-`Terminal
+```Terminal
 python -m venv venv
-`
+```
 
 # 2. Activate the virtual environment
 # On Windows
-`Terminal
+```Terminal
 .\venv\Scripts\activate
-`
+```
 2. Install the required dependencies:
 
-    `Terminal
+    ```Terminal
     pip install -r requirements.txt
-    `
+    ```
 
 3. Run the setup.py  once
-   `Terminal
+   ```Terminal
     python setup.py
-    `
+    ```
 
 4. Run the Flask application:
 
-    `Terminal
+    ```Terminal
     python app.py
-    `
+    ```
 
     The app will be accessible at `http://127.0.0.1:5000/`.
 
