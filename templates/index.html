@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A V E R | Audio Visual Emotion Recognition</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='images/site.webmanifest') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo-container">
+                <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" class="logo">
+                <h1>A V E R</h1>
+            </div>
+            <nav>
+                <!-- Links to sections within the home page -->
+                <a href="#home">Home</a>
+                <a href="{{ url_for('about') }}">About</a>  <!-- Link to About page -->
+                <a href="{{ url_for('contact') }}">Contact Us</a>  <!-- Link to Contact page -->
+            </nav>
+        </div>
+    </header>
+    
+    
+        
+
+    <section class="hero">
+        <h2>Welcome to the Audio Visual Emotion Recognition 🎭</h2>
+        <!-- Explore button to scroll to main application section -->
+        <a href="#main-application" class="explore-button">
+            Explore
+        </a>
+    </section>
+    
+    
+
+    <section class="how-it-works">
+        <div class="how-it-works-content">
+            <img src="{{ url_for('static', filename='images/bulb.jpg') }}" alt="How it works" class="bulb-image">
+            <div class="description">
+                <h3>How it works</h3>
+                <p>Our cutting-edge Audio Visual Emotion Recognition (A V E R) system leverages the power of two advanced CNN models to analyze and interpret human emotions:</p>
+
+                   <h2> Face Model</h2>
+                </p>  The face model captures and analyzes facial expressions from images and video. By detecting subtle changes in facial muscles, our system can accurately interpret a wide range of emotions. Whether it's a smile, frown, or raised eyebrow, the face model decodes these expressions to provide a detailed emotional analysis.</p>
+                    
+                   <h2> Audio Model</h2>
+                </p> The audio model processes vocal tones and speech patterns from audio recordings. By examining pitch, tone, rhythm, and other vocal characteristics, the model can identify emotions conveyed through speech. This analysis helps us understand the emotional context behind the words, providing a deeper insight into the speaker's feelings.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="main-application" class="main-application">
+        <h2>Main Application</h2><br>
+        <div class="main-rectangle" style="background-image: url('{{ url_for('static', filename='images/baground2.jpg') }}');">
+            <h3>🎬 Combined Analysis</h3>
+            <p>Upload a video to analyze both audio and video emotions.</p>
+            <a href="/combined-analysis" class="btn">Go to Combined Analysis</a>
+        </div>
+    </section>
+
+    <section class="other-applications">
+        <h2>Our Other Applications</h2>
+        <br>
+        <div class="application-grid">
+            <div class="app-card" style="background-image: url('{{ url_for('static', filename='images/baground2.jpg') }}');">
+                <h3>🖼️ Image Analysis</h3>
+                <p>Emotion prediction on Image using Face model.</p>
+                <a href="/image-analysis" class="btn">Go to Image Analysis</a>
+            </div>
+            <div class="app-card" style="background-image: url('{{ url_for('static', filename='images/baground2.jpg') }}');">
+                <h3>🔊 Audio Analysis</h3>
+                <p>Emotion prediction on Audio using Audio model.</p>
+                <a href="/audio-analysis" class="btn">Go to Audio Analysis</a>
+            </div>
+            <div class="app-card" style="background-image: url('{{ url_for('static', filename='images/baground2.jpg') }}');">
+                <h3>🎥 Video Analysis</h3>
+                <p>Emotion prediction on Video using face model.</p>
+                <a href="/video-analysis" class="btn">Go to Video Analysis</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Emotion Recognition</p>
+        <div class="social-media">
+            <a href="https://twitter.com"><img src="{{ url_for('static', filename='images/twitter-icon.png') }}" alt="Twitter"></a>
+            <a href="https://facebook.com"><img src="{{ url_for('static', filename='images/facebook-icon.png') }}" alt="Facebook"></a>
+            <a href="https://instagram.com"><img src="{{ url_for('static', filename='images/instagram-icon.png') }}" alt="Instagram"></a>
+        </div>
+    </footer>
+    <script>
+        window.onload = function() {
+            // Disable smooth scrolling after page load
+            document.documentElement.style.scrollBehavior = 'auto';
+            
+            // Enable smooth scrolling after a short delay
+            setTimeout(function() {
+                document.documentElement.style.scrollBehavior = 'smooth';
+            }, 100); // Delay to ensure page loads first
+        };
+    </script>
+    
+</body>
+</html>

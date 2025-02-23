@@ -1,0 +1,245 @@
+/* 🎨 Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+
+}
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-size: cover;
+  color: #000000;
+  line-height: 1.6;
+
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: rgba(0, 0, 0,0.8);
+  font-weight: bold;
+
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+header img {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px; /* Space between the logo and text */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition effect */
+}
+
+header img:hover {
+  transform: scale(1.1); /* Slightly enlarges the image */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Adds a shadow effect */
+}
+nav {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+
+}
+
+nav a {
+  margin: 0 15px;
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Header layout */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.navbar h1 {
+  font-size: 1.5em;
+  color: #fff;
+
+}
+
+
+/* 🏠 Hero Section */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: rgba(0, 0, 0,0.2);
+
+}
+
+.hero h2 {
+  font-size: 36px;
+}
+/* Explore button styling */
+.explore-button {
+  font-size: 24px;
+  color: #fff;
+  background-color: #ff5733;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.explore-button:hover {
+  background-color: #5adf79; /* Light green on hover */
+  transform: translateY(5px); /* Adds a slight hover effect */
+}
+
+
+/* 💡 How It Works Section */
+.how-it-works {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 40px 20px;
+  background: rgba(67, 92, 235, 0.2);
+
+}
+
+.how-it-works img {
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition effect */
+}
+
+.how-it-works img:hover {
+  transform: scale(1.1); /* Slightly enlarges the image */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Adds a shadow effect */
+}
+
+
+.description h3 {
+  font-size: 24px;
+}
+
+/* 🎬 Main Application */
+.main-application {
+  text-align: center;
+  padding: 40px 20px;
+  background: rgba(31, 220, 88, 0.4);
+
+}
+
+.main-application .main-rectangle {
+  width: 60%;
+  margin: 0 auto;
+  padding: 20px;
+  background-size: cover;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth effect */
+}
+
+.main-application .main-rectangle:hover {
+  transform: translateY(-10px); /* Lift up the rectangle */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5); /* Deepen the shadow for a lifted effect */
+}
+
+.main-application .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #ff5733;
+  color: #ffffff;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth effect */
+}
+.main-application .btn:hover {
+background: #5adf79; /* New background color on hover */
+color: #0f32bd; /* New text color on hover */
+}
+
+
+/* 🧩 Other Applications */
+.other-applications {
+  padding: 40px 20px;
+  background: rgba(31, 220, 88, 0.4);
+
+}
+
+.application-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.app-card {
+  width: 30%;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-size: cover;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth effect */
+}
+
+.app-card:hover {
+  transform: translateY(-30px); /* Lift up the card */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5); /* Deepen the shadow for a lifted effect */
+}
+
+.app-card .btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #ff5733;
+  color: #000000;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.app-card .btn:hover {
+  background: #5adf79; /* New background color on hover */
+  color: #0f32bd; /* New text color on hover */
+}
+
+/* 📞 Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.social-media a {
+  margin: 0 10px;
+}
+
+.social-media img {
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+}
