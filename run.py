@@ -1,64 +1,14 @@
 import os
 import sys
-import cv2
 import json
-import torch
+import cv2
 import moviepy.editor as mp
 import contextlib
 import io
 import source.audio_analysis_utils.predict as audio_predict
 import source.face_emotion_utils.predict as face_predict
 import source.config as config
-import os
-
-# 📁 DEFINE RESULTS FOLDER
-RESULTS_FOLDER = os.path.abspath("./AnalysisResults")
-os.makedirs(RESULTS_FOLDER, exist_ok=True)  # Create folder if it doesn't exist
-
-# ------------------------- CONFIGURATIONS ------------------------- #
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
-os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
-
-
-# ------------------------- UTILITY FUNCTIONS ------------------------- #
-
-def create_folders():
-    """Create required directories if they don't exist."""
-    paths = [
-        config.INPUT_FOLDER_PATH,
-        config.OUTPUT_FOLDER_PATH,
-        config.MODEL_FOLDER_PATH,
-        config.DATA_FOLDER_PATH,
-        config.PREPROCESSED_IMAGES_FOLDER_PATH,
-        config.PREPROCESSED_AUDIO_FOLDER_PATH,
-        config.CLEANED_LABELLED_AUDIO_FOLDER_PATH,
-        config.AUDIO_MODEL_FOLDER_PATH,
-        config.FACE_MODEL_FOLDER_PATH,
-        os.path.join(config.MAIN_PATH, "VideoBufferFolder"),
-        os.path.join(config.MAIN_PATH, "AnalysisResults"),
-    ]
-    for path in paths:
-        os.makedirs(path, exist_ok=True)
-
-
-def resolve_file_path(file_name):
-    """Resolve file path from given name or default input folder."""
-    if os.path.isfile(file_name):
-        return os.path.abspath(file_name)
-    candidate_path = os.path.abspath(os.path.join(config.INPUT_FOLDER_PATH, file_name))
-    return candidate_path if os.path.isfile(candidate_path) else None
-
-
-def save_analysis_results(result_data, file_name):
-    """Save analysis results as a JSON file."""
-    result_file = os.path.join(
-        config.MAIN_PATH, "AnalysisResults",
-        f"{os.path.splitext(os.path.basename(file_name))[0]}_analysis.json"
-    )
-    with open(result_file, "w") as f:
-        json.dump(result_data, f, indent=4)
-    print(f" Analysis saved: {result_file}")
-
+from setup import create_folders, RESULTS_FOLDER  # Import setup functions
 
 # ------------------------- AUDIO ANALYSIS ------------------------- #
 def extract_audio(video_file):
@@ -66,15 +16,11 @@ def extract_audio(video_file):
     try:
         video = mp.VideoFileClip(video_file)
 
-        # ✅ Check if video has an audio track
         if video.audio is None:
             print(" No audio stream found in the video.")
             return None
 
-        audio_file = os.path.join(
-            config.INPUT_FOLDER_PATH,
-            os.path.splitext(os.path.basename(video_file))[0] + ".wav"
-        )
+        audio_file = os.path.join(config.INPUT_FOLDER_PATH, os.path.splitext(os.path.basename(video_file))[0] + ".wav")
 
         with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
             video.audio.write_audiofile(audio_file)
@@ -85,7 +31,6 @@ def extract_audio(video_file):
     except Exception as e:
         print(f"❌ Error extracting audio: {repr(e)}")
         return None
-
 
 
 def handle_audio_analysis(audio_file):
@@ -164,8 +109,6 @@ def handle_face_analysis(video_file):
 
 # ------------------------- COMBINED ANALYSIS ------------------------- #
 
-# ------------------------- COMBINED ANALYSIS ------------------------- #
-
 def handle_combined_analysis(video_file):
     """Perform combined audio and video emotion analysis."""
     results = {}
@@ -185,7 +128,6 @@ def handle_combined_analysis(video_file):
     frame_count = 0
 
     while True:
-        # Skip 10 frames to reduce processing load
         for _ in range(10):
             ret, _ = video.read()
             if not ret:
@@ -219,17 +161,16 @@ def handle_combined_analysis(video_file):
     print("COMBINED ANALYSIS COMPLETED")
 
 
-
 # ------------------------- MAIN FUNCTION ------------------------- #
 
 def print_usage():
     """Display usage instructions."""
     print("\n Usage:")
-    print("  python run.py -VA <video.mp4>   # Video Analysis")
-    print("  python run.py -AA <audio.mp3>   # Audio Analysis")
-    print("  python run.py -IA <image.png>   # Image Analysis")
-    print("  python run.py -CA <video.mp4>   # Combined Analysis")
-    print("  python run.py <file_name>       # Auto-detect and process file\n")
+    print("  python run_analysis.py -VA <video.mp4>   # Video Analysis")
+    print("  python run_analysis.py -AA <audio.mp3>   # Audio Analysis")
+    print("  python run_analysis.py -IA <image.png>   # Image Analysis")
+    print("  python run_analysis.py -CA <video.mp4>   # Combined Analysis")
+    print("  python run_analysis.py <file_name>       # Auto-detect and process file\n")
 
 
 def main(file_name):
