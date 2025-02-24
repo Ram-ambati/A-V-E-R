@@ -28,6 +28,7 @@ A V E R is a web application built with Flask that performs emotion recognition 
 1.Clone the repository:
 
     git clone https://github.com/Ram-ambati/A-V-E-R.git
+    cd A-V-E-R
     
 2.Create the virtual environment
    
