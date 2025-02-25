@@ -32,12 +32,17 @@ A V E R is a web application built with Flask that performs emotion recognition 
     
 2.Create the virtual environment
    
-    python -m venv venv
+    python -m venv venv 
+    
+2.1 or use 
+    `conda create -n MyEnv python=3.10`
     
 3.Activate the virtual environment
   On Windows activate your env
 
     .\venv\Scripts\activate
+3.1 or use 
+     `conda activate MyEnv`
     
 4.Install the required dependencies:
 
