@@ -1,0 +1,471 @@
+/* 🎨 Global Styles - Inherited from Common Code */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+  background-size: cover;
+  color: #000000;
+  line-height: 1.6;
+
+
+}
+
+main {
+  flex: 1; /* Pushes footer down */
+}
+
+/* 🔝 Header & Navigation */
+header {
+  display: flex;
+  justify-content: space-between; /* Ensures the logo stays on the left */
+  align-items: center;
+  padding: 20px 40px;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+header img {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+header img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Pushes the nav to the right */
+}
+
+nav a {
+  margin: 0 15px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Styling the separator (|) */
+nav a:not(:last-child)::after {
+  content: '|';
+  margin-left: 15px;
+  color: #000000;
+}
+
+nav a:last-child::after {
+  content: ''; /* Removes the separator from the last item */
+}
+
+.hidden {
+  display: none;
+}
+
+/* 📝 Hero Section */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+/* 📂 Upload Section */
+.upload-section {
+  text-align: center;
+  margin: 50px auto;
+  width: 85%;
+  background: rgb(202, 230, 217);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.upload-section input[type="file"] {
+  width: 90%;
+  height: 150px; /* Increased drop space height */
+  padding: 20px;
+  border: 3px dashed #83b0e6;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.upload-section input[type="file"]:hover {
+  border-color: #5adf79;
+  background-color: rgba(90, 223, 121, 0.1); /* Light green highlight */
+}
+
+.upload-section .btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #ff5733;
+  color: #000000;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.upload-section .btn:hover {
+  background: #5adf79;
+  color: #0f32bd;
+  transform: scale(1.1);
+}
+
+/* 📊 Analysis Results */
+.results-section {
+  margin: 50px auto;
+  padding: 25px;
+  width: 85%;
+  background: rgba(197, 232, 212, 0.3);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.results-section h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.results-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  background: #e6c6c6;
+
+}
+
+.result-card {
+  width: 30%;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.result-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+.result-card p {
+  font-size: 16px;
+  color: #333333;
+}
+
+/* 📢 Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  margin-top: auto; /* Keeps footer at bottom */
+}
+
+.social-media a {
+  margin: 0 10px;
+}
+
+.social-media img {
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  transition: transform 0.3s ease;
+}
+
+.social-media img:hover {
+  transform: scale(1.2);
+}
+
+/* 🎨 Table Styles for Average Emotions */
+#average-emotions {
+  margin: 30px 0;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#average-emotions h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+#average-emotions table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+}
+
+#average-emotions th, #average-emotions td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+#average-emotions th {
+  background-color: #ff5733;
+  color: white;
+}
+
+#average-emotions tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#average-emotions tr:hover {
+  background-color: #ddd;
+}
+
+/* 🎨 Emotion Trend Chart Styling */
+#emotion-trend {
+  margin: 30px 0;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#emotion-trend h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Make sure the canvas inside #emotion-trend takes full width and height */
+#emotion-trend canvas {
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 auto;
+}
+
+/* 🎨 Processing Text Styling */
+#processing-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #02ff3d;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* 🎨 Results Section */
+#results {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #333333;
+  text-align: left;
+  padding-left: 10px;
+  margin-left: 10px;
+}
+
+/* 🎨 General Layout Improvements */
+.hidden {
+  display: none;
+}
+
+.upload-section .btn {
+  background: #5adf79;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.upload-section .btn:hover {
+  background: #4cae52;
+}
+
+/* 🎨 Table Styles */
+table, th, td {
+  border: 1px solid black;
+  align-self: center;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+
+table {
+  margin: 0 auto; /* Centers the table horizontally */
+  border-collapse: collapse; /* Ensures borders collapse together */
+}
+
+/* 🎨 Audio Analysis Container */
+.audio-analysis-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  padding: 8px;
+  flex-wrap: wrap; 
+  background: rgb(230, 227, 244);
+  /* Allow items to wrap when the screen is small */
+}
+
+/* Audio Table */
+.audio-table {
+  width: 45%; /* Adjust the width as needed */
+  max-width: 600px; /* Fixed max-width for larger screens */
+  margin: 0 auto;
+}
+
+/* Audio Chart */
+.audio-chart {
+  width: 600px; /* Fixed width for chart */
+  height: 400px; /* Fixed height for chart */
+  margin: 0 auto; /* Center the chart */
+}
+
+/* Responsive design for small screens */
+@media (max-width: 768px) {
+  .audio-analysis-container {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center align the items */
+  }
+  
+  .audio-table, .audio-chart {
+    width: 100%; /* Make the table and chart full width */
+    max-width: none; /* Remove max-width restriction */
+  }
+
+  .audio-chart {
+    background: rgb(211, 224, 239);
+  }
+}
+
+/* 🎨 Video Analysis Container */
+.video-analysis-container {
+  display: block; /* Stack the elements vertically */
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  padding: 8px;
+  background: rgb(208, 203, 236);
+}
+
+/* For the video analysis chart (Make it bigger) */
+.video-chart-container {
+  margin-top: 30px;  /* Adds space between the table and chart */
+  width: 100%; /* Full width by default */
+  max-width: 800px; /* Set a max width for large screens */
+  min-width: 300px; /* Set minimum width to prevent shrinking too much */
+  height: 300px; /* Adjusts chart height */
+  min-height: 250px; /* Set minimum height to ensure it's not too small */
+  margin: 0 auto; /* Center the chart */
+  background: rgb(211, 224, 239);
+}
+
+/* For the video analysis table */
+.video-table-container {
+  width: 100%; /* Full width */
+  overflow-x: auto; /* Ensures table content doesn't overflow */
+  margin-bottom: 30px; /* Adds space between the chart and the table */
+}
+
+/* 📊 Combined Section Layout */
+.combined-analysis-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.combined-card {
+  width: 32%;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* 🎨 Emotion Trend Chart Container (for combined analysis section) */
+.combined-chart-container {
+  margin-top: 30px; /* Space between chart and other content */
+  width: 100%;
+  max-width: 800px;
+  min-width: 300px;
+  height: 300px;
+  min-height: 250px;
+  margin: 0 auto;
+  background: rgb(211, 224, 239);
+}
+
+.combined-chart-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 auto;
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 900px) {
+  .combined-card {
+    width: 48%; /* Two cards per row */
+  }
+
+  .audio-analysis-container, .video-analysis-container {
+    flex-direction: column; /* Stack elements vertically */
+    gap: 20px; /* Adds gap between elements */
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero h2 {
+    font-size: 28px;
+  }
+
+  .upload-section {
+    width: 100%; /* Take full width */
+    padding: 30px 15px;
+  }
+
+  .results-container {
+    flex-direction: column; /* Stack the result cards vertically */
+    align-items: center;
+  }
+
+  .combined-card {
+    width: 100%; /* Full width for mobile */
+  }
+
+  /* Chart Adjustments for Mobile */
+  .audio-chart, .video-chart-container, .combined-chart-container, canvas {
+    width: 100%; /* Full width on mobile */
+    height: auto; /* Maintain aspect ratio */
+    background: rgb(211, 224, 239);
+  }
+}

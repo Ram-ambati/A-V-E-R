@@ -1,0 +1,10 @@
+{
+    "emotion": "Happy",
+    "probabilities": {
+        "Sad/Fear": 0.0011,
+        "Neutral": 0.0021,
+        "Happy": 0.8608,
+        "Angry": 0.0002,
+        "Surprise/Disgust": 0.1358
+    }
+}

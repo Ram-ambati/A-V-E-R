@@ -1,0 +1,147 @@
+{
+    "audio_analysis": {
+        "emotion": "Angry",
+        "probability": 0.7765,
+        "probabilities": {
+            "Sad/Fear": 0.21,
+            "Neutral": 0.0002,
+            "Happy": 0.0007,
+            "Angry": 0.7765,
+            "Surprise/Disgust": 0.0126
+        }
+    },
+    "video_analysis": [
+        {
+            "frame": 0,
+            "emotion": "Happy",
+            "probabilities": {
+                "Sad/Fear": 0.0009,
+                "Neutral": 0.0,
+                "Happy": 0.9991,
+                "Angry": 0.0,
+                "Surprise/Disgust": 0.0
+            }
+        },
+        {
+            "frame": 10,
+            "emotion": "Angry",
+            "probabilities": {
+                "Sad/Fear": 0.0034,
+                "Neutral": 0.0,
+                "Happy": 0.0053,
+                "Angry": 0.9913,
+                "Surprise/Disgust": 0.0
+            }
+        },
+        {
+            "frame": 20,
+            "emotion": "Angry",
+            "probabilities": {
+                "Sad/Fear": 0.0001,
+                "Neutral": 0.0,
+                "Happy": 0.0,
+                "Angry": 0.9897,
+                "Surprise/Disgust": 0.0101
+            }
+        },
+        {
+            "frame": 30,
+            "emotion": "Angry",
+            "probabilities": {
+                "Sad/Fear": 0.0,
+                "Neutral": 0.0,
+                "Happy": 0.0,
+                "Angry": 0.9902,
+                "Surprise/Disgust": 0.0098
+            }
+        },
+        {
+            "frame": 40,
+            "emotion": "Angry",
+            "probabilities": {
+                "Sad/Fear": 0.0015,
+                "Neutral": 0.0,
+                "Happy": 0.0001,
+                "Angry": 0.9984,
+                "Surprise/Disgust": 0.0
+            }
+        },
+        {
+            "frame": 50,
+            "emotion": "Angry",
+            "probabilities": {
+                "Sad/Fear": 0.004,
+                "Neutral": 0.0001,
+                "Happy": 0.0085,
+                "Angry": 0.979,
+                "Surprise/Disgust": 0.0084
+            }
+        },
+        {
+            "frame": 60,
+            "emotion": "Surprise/Disgust",
+            "probabilities": {
+                "Sad/Fear": 0.0107,
+                "Neutral": 0.0088,
+                "Happy": 0.0011,
+                "Angry": 0.0016,
+                "Surprise/Disgust": 0.9777
+            }
+        },
+        {
+            "frame": 70,
+            "emotion": "Surprise/Disgust",
+            "probabilities": {
+                "Sad/Fear": 0.0063,
+                "Neutral": 0.0016,
+                "Happy": 0.0017,
+                "Angry": 0.1521,
+                "Surprise/Disgust": 0.8382
+            }
+        },
+        {
+            "frame": 80,
+            "emotion": "Surprise/Disgust",
+            "probabilities": {
+                "Sad/Fear": 0.1013,
+                "Neutral": 0.0648,
+                "Happy": 0.0067,
+                "Angry": 0.0391,
+                "Surprise/Disgust": 0.7881
+            }
+        },
+        {
+            "frame": 90,
+            "emotion": "Neutral",
+            "probabilities": {
+                "Sad/Fear": 0.0334,
+                "Neutral": 0.587,
+                "Happy": 0.2734,
+                "Angry": 0.0006,
+                "Surprise/Disgust": 0.1056
+            }
+        },
+        {
+            "frame": 100,
+            "emotion": "Neutral",
+            "probabilities": {
+                "Sad/Fear": 0.0754,
+                "Neutral": 0.6437,
+                "Happy": 0.1917,
+                "Angry": 0.001,
+                "Surprise/Disgust": 0.0882
+            }
+        },
+        {
+            "frame": 110,
+            "emotion": "Neutral",
+            "probabilities": {
+                "Sad/Fear": 0.1147,
+                "Neutral": 0.4305,
+                "Happy": 0.032,
+                "Angry": 0.0007,
+                "Surprise/Disgust": 0.422
+            }
+        }
+    ]
+}

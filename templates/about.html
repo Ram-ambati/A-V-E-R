@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A V E R | About Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* 🎨 Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        main {
+            flex: 1; /* Pushes footer down */
+        }
+        
+        html, body {
+            height: 100%;
+            font-family: 'Roboto', sans-serif;
+            color: #000000;
+            background-color: #f4f4f9;
+            line-height: 1.6;
+        }
+        
+        main {
+            padding: 20px;
+        }
+        
+        /* 🔝 Header & Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: rgba(0, 0, 0, 0.8);
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            color: #fff;
+        }
+        
+        header img {
+            width: 60px;
+            height: 60px;
+            margin-right: 10px;
+        }
+        
+        nav a {
+            margin: 0 15px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        nav a:hover {
+            text-decoration: underline;
+        }
+        
+        /* 📝 About Us Section */
+        .about-us {
+            text-align: center;
+            margin: 50px 0;
+            padding: 30px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-us h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .about-us p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .about-us .team,
+        .about-us .supervisors {
+            text-align: left;
+            font-size: 18px;
+        }
+        
+        .about-us .team ul,
+        .about-us .supervisors ul {
+            list-style: none;
+        }
+        
+        .about-us .team li,
+        .about-us .supervisors li {
+            margin-bottom: 10px;
+        }
+        
+        /* 🎨 Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            height: 100%;
+            font-family: 'Roboto', sans-serif;
+            color: #000000;
+            background-color: #f4f4f9;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column; /* Set the body to be a column layout */
+        }
+        
+        /* 📩 Main Section */
+        main {
+            flex: 1; /* This will make the main content grow and push the footer down */
+            padding: 20px;
+        }
+        
+        /* 📢 Footer */
+        footer {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #ffffff;
+            text-align: center;
+            margin-top: auto; /* Ensures the footer sticks to the bottom */
+        }
+        
+        .social-media a {
+            margin: 0 10px;
+        }
+        
+        .social-media img {
+            width: 30px;
+            height: 30px;
+            border-radius: 30px;
+            transition: transform 0.3s ease;
+        }
+        
+        .social-media img:hover {
+            transform: scale(1.2);
+        }
+        .team-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .team-table td {
+            padding: 8px;
+            text-align: left;
+            border: none; /* Makes the borders invisible */
+        }
+        
+        .team-table .name {
+            width: 60%; /* Adjust width as needed */
+        }
+        
+        .team-table .id {
+            width: 40%; /* Adjust width as needed */
+        }
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" class="logo">
+            <h1>A V E R</h1>
+        </div>
+        <nav class="navbar">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('contact') }}">Contact Us</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-us">
+            <h2>About Us</h2>
+            <p>We are a group of passionate individuals working on the Audio-Visual Emotion Recognition System (A.V.E.R). Our project focuses on analyzing emotions through audio and visual inputs using deep learning techniques.</p>
+
+            <div class="team">
+                <h3>Team Leader</h3>
+                <table class="team-table">
+                    <tr>
+                        <td class="name">Thatikala Srinidhi</td>
+                        <td class="id">22241-CS-001</td>
+                    </tr>
+                </table>
+            
+                <h3>Team Members:</h3>
+                <table class="team-table">
+                    <tr>
+                        <td class="name">Ayyerpula Rishi Yadav</td>
+                        <td class="id">22241-CS-002</td>
+                    </tr>
+                    <tr>
+                        <td class="name">Maher Khan</td>
+                        <td class="id">22241-CS-004</td>
+                    </tr>
+                    <tr>
+                        <td class="name">Ambati Ramakota Reddy</td>
+                        <td class="id">22241-CS-029</td>
+                    </tr>
+                    <tr>
+                        <td class="name">Yennam Vani</td>
+                        <td class="id">22241-CS-032</td>
+                    </tr>
+                    <tr>
+                        <td class="name">Bondala Charan Tej</td>
+                        <td class="id">22241-CS-038</td>
+                    </tr>
+                    <tr>
+                        <td class="name">Hamza Hussain</td>
+                        <td class="id">21241-CS-019</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="supervisors">
+                <h3>Supervised By:</h3>
+                <table class="team-table">
+                    <tr>
+                        <td>Mrs Prashanthi, Assistant Professor</td>
+                    </tr>
+                </table>
+            </div>
+            
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Emotion Recognition</p>
+        <div class="social-media">
+            <a href="https://twitter.com">
+                <img src="{{ url_for('static', filename='images/twitter-icon.png') }}" alt="Twitter">
+            </a>
+            <a href="https://facebook.com">
+                <img src="{{ url_for('static', filename='images/facebook-icon.png') }}" alt="Facebook">
+            </a>
+            <a href="https://instagram.com">
+                <img src="{{ url_for('static', filename='images/instagram-icon.png') }}" alt="Instagram">
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
